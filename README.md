@@ -1,5 +1,15 @@
 # Detecting-asymmetric-information-with-dbg-pds
-Building on the dbg-pds-option-calibration git, I am now using the data in order to detect cases of asymmetric information
+Building on the dbg-pds-option-calibration git, I am now using the data in order to detect cases of asymmetric information.
+
+My goal was to use this output to detect events of asymmetrical information in stock options market.
+
+Asymmetrical information can stem from criminal behaviours like insider trading but also from an edge given by advanced research to actors deploying extensive means like the use of mobile phone data, private polls or other types of intelligence gathering along with machine learning treatment of those data.
+The development of those techniques risks undermining the business model of less specialized actors, including market makers, thus jeopardizing the structure of the market.
+
+Asymmetrical information can be detected because they will ultimately lead to a dramatic shift of a parameter such as the spot price, the volatility or the dividend yield.
+
+The goal here is to identify signals in the trading pattern that will alert liquidity providers that something is fishy.
+
 
 # The BuildInputs class is just here to transform the parameters files generated in the dbg-pds-option-calibration git into time series. 
 As the parameters were generated each time a batch of 5 trades could be used to calibrate a set of parameters for any given maturity, the szerie was unevenly sampled. Thanks to some extrapolation (1 day max) we can now have a full time series of parameters sampled on 1 minute intervals.
