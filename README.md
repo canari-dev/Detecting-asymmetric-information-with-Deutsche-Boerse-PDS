@@ -1,6 +1,6 @@
 # Context :
 
-My goal is to use this output to detect events of asymmetrical information in stock options market.
+My goal is to use this output to detect instances of asymmetrical information in the stock options market.
 
 Asymmetrical information can stem from criminal behaviours like insider trading but also from an edge given by advanced research to actors deploying extensive means like the use of mobile phone data, private polls or other types of intelligence gathering along with machine learning treatment of those data.
 The development of those techniques risks undermining the business model of less specialized actors, including market makers, thus jeopardizing the structure of the market.
@@ -11,7 +11,7 @@ The goal here is to identify signals in the trading pattern that will alert liqu
 
 # Detecting-asymmetric-information-with-dbg-pds
 
-Building on the dbg-pds-option-calibration git, I am now using the data in order to detect cases of asymmetric information.
+Building on the dbg-pds-option-calibration git, I am now using the data in order to detect instances of asymmetric information.
 
 
 # The BuildInputs class is just here to transform the parameters files generated in the dbg-pds-option-calibration git into time series. 
