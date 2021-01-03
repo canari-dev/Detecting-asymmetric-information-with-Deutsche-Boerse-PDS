@@ -12,10 +12,10 @@ The goal here is to identify signals in the trading pattern that will alert liqu
 
 # Detecting-asymmetric-information-with-dbg-pds
 
-Building on the dbg-pds-option-calibration git, I am now using the output data in order to detect instances of asymmetric information.
+Building on the dbg-pds-option-calibration git, I am now using the output data to detect instances of asymmetric information.
 
 
-# The BuildInputs class is just here to transform the parameters files generated in the dbg-pds-option-calibration git into time series. 
+# The BuildInputs class is just here to transform the parameters dataframes generated in the dbg-pds-option-calibration git into time series. 
 
 In the dbg-pds-option-calibration git, set of parameters was generated each time a batch of 5 trades could be used to calibrate a set of implicit volatility parameters for any given maturity.
 This leads to a time series that is unevenly sampled. Thanks to some extrapolation (1 day max) the BuildInputs class transforms these data into a proper time series of parameters sampled to 1 minute intervals.
@@ -53,3 +53,5 @@ This will iron out market regimes.
 
 Cases of sudden move of a parameter (here 3 standard deviations) are rare and only a fraction of those events would have been preceded by abnormal trading patterns due to well informed agents trying to take advantage. 
 As a consequence, there is not enough data to feed a complex Neural Network. If we were to use a complex NN, we would probably run into over-parameterization issues.
+
+The reason why the Xs thus generated are insuficient (see yellow graphs in the output folder) is likely due to weak inputs. In particular, the hypothesis made to get signed sensitivity (depending on the side of the interest generating the trade) is dubious and we would need bid-offer prices prior to the trade in order to get a better idea of which side was the interest.
