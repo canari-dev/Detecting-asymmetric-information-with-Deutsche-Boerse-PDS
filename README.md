@@ -12,7 +12,7 @@ The goal here is to identify signals in the trading pattern that will alert liqu
 
 # Detecting-asymmetric-information-with-dbg-pds
 
-Building on the dbg-pds-option-calibration git, I am now using the output data to detect instances of asymmetric information.
+Building on the dbg-pds-option-calibration git which is itself based on the Deutsche Boerse Public Data project (https://github.com/Deutsche-Boerse/dbg-pds), I am now using the output data to detect instances of asymmetric information.
 
 
 # The BuildInputs class is just here to transform the parameters dataframes generated in the dbg-pds-option-calibration git into time series. 
