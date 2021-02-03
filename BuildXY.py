@@ -226,10 +226,10 @@ class Data():
 
                     self.dfti['Y-' + cl] = dfst.shift(-Ylag_min) / dfst - 1
                     # maybe add a protection against holes in the index to make sure shift(-Ylag_min) does take us approx Ylag days ahead
-                    self.dfti['validY'] = (dfst.shift(-Ylag_min).index - dfst.index).totalseconds() / (60 * 60 * 8.5)
-                    print('Before Y verif : ' + str(self.dfti.shape))
-                    self.dfti = self.dfti.loc[(self.dfti.validY < Ylag + 3)]  # 2 for a weekend, one for leeway
-                    print('After Y verif : ' + str(self.dfti.shape))
+                    # self.dfti['validY'] = (dfst.shift(-Ylag_min).index - dfst.index).totalseconds() / (60 * 60 * 8.5)
+                    # print('Before Y verif : ' + str(self.dfti.shape))
+                    # self.dfti = self.dfti.loc[(self.dfti.validY < Ylag + 3)]  # 2 for a weekend, one for leeway
+                    # print('After Y verif : ' + str(self.dfti.shape))
 
                     self.dftj = self.dftj.append(self.dfti)
 
@@ -263,12 +263,12 @@ class Data():
 
                     if st == 0:
                         self.dft['dt-' + f] = (
-                                    self.dft[f] / self.dft[f].ewm(span=lt_min, min_periods=int(lt_min / 2)).mean())
+                                self.dft[f] / self.dft[f].ewm(span=lt_min, min_periods=int(lt_min / 2)).mean())
                     else:
                         self.dft['dt-' + f] = (
-                                    self.dft[f].ewm(span=st_min, min_periods=st_min).mean() / self.dft[unsigned_cl].ewm(
-                                span=lt_min,
-                                min_periods=int(lt_min / 2)).mean())  # mean is already 0 so no need for a -1
+                                self.dft[f].ewm(span=st_min, min_periods=st_min).mean() / self.dft[unsigned_cl].ewm(
+                            span=lt_min,
+                            min_periods=int(lt_min / 2)).mean())  # mean is already 0 so no need for a -1
 
                     #     if st == 0:
                     #         self.dft['dt-' + f] = (self.dft[f] / self.dft[f].ewm(halflife=lt_td, times=self.dfti.index).mean()) - 1

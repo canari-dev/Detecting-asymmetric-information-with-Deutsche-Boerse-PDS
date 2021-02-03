@@ -11,12 +11,17 @@ import scipy.stats as si
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
 
-local_data_folder = '/Users/pvamb/DBGPDS/deutsche-boerse-xetra-pds'  # do not end in /
-local_data_folder_opt = '/Users/pvamb/DBGPDS/deutsche-boerse-eurex-pds'  # do not end in /
-folder1 = '/Users/pvamb/DBGPDS/processed'
-folder2 = '/Users/pvamb/DBGPDS/parameters'
-folder3 = '/Users/pvamb/DBGPDS/XY'
-folder4 = '/Users/pvamb/DBGPDS/MLoutput'
+# local_data_folder = '/Users/pvamb/DBGPDS/deutsche-boerse-xetra-pds'  # do not end in /
+# local_data_folder_opt = '/Users/pvamb/DBGPDS/deutsche-boerse-eurex-pds'  # do not end in /
+# folder1 = '/Users/pvamb/DBGPDS/processed'
+# folder2 = '/Users/pvamb/DBGPDS/parameters'
+# folder3 = '/Users/pvamb/DBGPDS/XY'
+# folder4 = '/Users/pvamb/DBGPDS/MLoutput'
+
+folder1 = 'D:/Users/GitHub/DBG-PDS/processed'
+folder2 = 'D:/Users/GitHub/DBG-PDS/parameters'
+folder3 = 'D:/Users/GitHub/DBG-PDS/XY'
+folder4 = 'D:/Users/GitHub/DBG-PDS/MLoutput'
 
 # folder1 = '/root/docker/DBGPDS/processed'
 # folder2 = '/root/docker/DBGPDS/parameters'
@@ -46,7 +51,7 @@ stocks_list3 = ['VOW3', 'FRE', 'VNA', 'ALV']
 ref = 'SX5E'
 indexlist = ['SX5E']
 
-stocks_list = stocks_list1  # + stocks_list2 + stocks_list3
+stocks_list = ['DAI']  # + stocks_list2 + stocks_list3
 
 bank_h = ['01-01-2020', '10-04-2020', '13-04-2020', '01-05-2020', '01-06-2020', '24-12-2020', '25-12-2020',
           '31-12-2020',

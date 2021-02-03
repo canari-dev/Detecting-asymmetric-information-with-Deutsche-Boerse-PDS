@@ -12,8 +12,6 @@ from sklearn.model_selection import KFold
 from sklearn.preprocessing import LabelEncoder
 from sklearn.pipeline import Pipeline
 
-
-
 # load dataset
 df = pd.read_pickle(
     folder3 + '/XY_all_stocks -st_' + str(st) + '-lt_' + str(lt) + '-type_' + str(filter_type) + '-cap_' + str(

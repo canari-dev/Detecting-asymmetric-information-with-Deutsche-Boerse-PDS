@@ -5,15 +5,17 @@ import matplotlib.dates as mdates
 class Graph():
     def __init__(self, udl='DAI'):
         self.udl = udl
-        if udl != '':
-            self.dfp = pd.read_pickle(folder2 + '/Parameters_' + udl + '.pkl')
-            self.dfi = pd.read_pickle(folder2 + '/Inputs_' + udl + '.pkl')
-            self.dfx = pd.read_pickle(folder3 + '/X_' + udl + '.pkl')
-            self.dfxtd = pd.read_pickle(folder3 + '/Xtd_' + udl + '.pkl')
-
-            self.dfxy = pd.read_pickle(folder3 + '/XY_' + udl + '.pkl')
-        else:
-            self.dfxy = pd.read_pickle(folder3 + '/XY_all_stocks -st 2-lt 20.pkl')
+        try:
+            if udl != '':
+                self.dfp = pd.read_pickle(folder2 + '/Parameters_' + udl + '.pkl')
+                self.dfi = pd.read_pickle(folder2 + '/Inputs_' + udl + '.pkl')
+                self.dfx = pd.read_pickle(folder3 + '/X_' + udl + '.pkl')
+                self.dfxtd = pd.read_pickle(folder3 + '/Xtd_' + udl + '.pkl')
+                self.dfxy = pd.read_pickle(folder3 + '/XY_' + udl + '.pkl')
+            else:
+                self.dfxy = pd.read_pickle(folder3 + '/XY_all_stocks -st 2-lt 20.pkl')
+        except:
+            pass
 
     def graph_params(self, year=2020, month=9):
         expi1 = pd.Timestamp(str(year) + "-{:02d}".format(month) + "-15 15:30:00")

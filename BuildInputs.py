@@ -91,11 +91,11 @@ class BuildInputs(Pricing):
 
         # inorder to knnow if it isuy or sell trade, we look at the direction of the parameters (since trades are shifting the parameters)
         self.df_volume['TotalSignedSensiATF'] = self.df_volume['TotalSensiATF'] * (
-                    self.df_volume['Price'] - self.df_volume['Price_prec'])
+                self.df_volume['Price'] - self.df_volume['Price_prec'])
         self.df_volume['TotalSignedSensiSMI'] = self.df_volume['TotalSensiSMI'] * (
-                    self.df_volume['Price'] - self.df_volume['Price_prec'])
+                self.df_volume['Price'] - self.df_volume['Price_prec'])
         self.df_volume['TotalSignedSensiFwdRatio'] = self.df_volume['TotalSensiFwdRatio'] * (
-                    self.df_volume['Price'] - self.df_volume['Price_prec'])
+                self.df_volume['Price'] - self.df_volume['Price_prec'])
 
         self.df_volume['NumberOfTrades'] = self.df_volume['NumberOfTrades'].fillna(0)
         self.df_volume = self.df_volume[
