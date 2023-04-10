@@ -1,5 +1,6 @@
 # Context :
 
+
 My goal is to detect instances of asymmetrical information in the stock options market.
 
 Asymmetrical information can stem from criminal behaviours like insider trading but also from an edge given by advanced research to actors deploying extensive means like the use of mobile phone data, private polls or other types of intelligence gathering along with machine learning treatment of those data.
